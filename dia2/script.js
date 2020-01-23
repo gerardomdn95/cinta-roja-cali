@@ -68,6 +68,6 @@ const birthday = (dinero, amor, rencores) => {
     });
 }
 
-birthday(true, true, false)
+birthday(false, true, false)
     .then((data) => console.log(data))
     .catch((razon) => console.log(razon));
