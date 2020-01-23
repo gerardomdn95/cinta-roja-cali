@@ -74,3 +74,17 @@ class pet extends animal {
 
 var dog = new pet(4, 2);
 console.log(dog);
+
+var myPenguin = {
+    character: 'Misa',
+    origin: ['Death and the Penguin', 'Penguin Lost'],
+    autor: 'Andrey Kurkov',
+    notes: 'A cheeky penguin who gets in over his head in mafia affairs and political intrigue.',
+
+    hello: function() {
+        console.log('Hola, soy un pingüino y mi nombre es ' + this.character);
+    }
+}
+
+console.log(myPenguin);
+myPenguin.hello();
