@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const ObjectId = mongoose.Schema.ObjectId;
 
 const movieSchema = new Schema({
+    movieId: ObjectId,
     title: String,
     year: Number,
     description: {
@@ -14,10 +16,14 @@ const movieSchema = new Schema({
     },
     theme: {
         type: String,
-        enum: ['Comedia', 'Terror', 'Drama', 'Infantil']
+        enum: ['Comedia', 'Terror', 'Drama', 'Infantil', 'Acción']
     },
     director: {
         type: String,
         default: 'Desconocido'
     }
 });
+
+const Movie = mongoose.model('Movie', movieSchema);
+
+module.exports = Movie;
