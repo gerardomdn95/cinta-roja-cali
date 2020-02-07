@@ -1,6 +1,6 @@
 import React from 'react';
 import { MoviesContainer } from './containers/MoviesContainer/MoviesContainer';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (

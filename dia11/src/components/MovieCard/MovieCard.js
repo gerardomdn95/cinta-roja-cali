@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './movieCard.scss';
 
 export default class MovieCard extends Component {
     render() {
@@ -14,8 +15,10 @@ export default class MovieCard extends Component {
                             <p>{this.props.description}</p>
                         </div>
                         <div className="card-action">
-                            <p>{this.props.director}</p>
-                            <p>{this.props.theme}</p>
+                            <p>Año: {this.props.year}</p>
+                            <p>Director: {this.props.director}</p>
+                            <p>Tema: {this.props.theme}</p>
+                            <button>Eliminar</button>
                         </div>
                     </div>
                 </div>

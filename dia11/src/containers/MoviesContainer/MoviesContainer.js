@@ -1,22 +1,36 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import MovieCard from '../../components/MovieCard/MovieCard';
 
 export const MoviesContainer = () => {
+
+    const [movies, setMovies] = useState([]);
+
+    useEffect(() => {
+        axios.get('https://devf-movies.herokuapp.com/api/v1/getMovies')
+            .then(movies => setMovies(movies.data))
+            .catch(err => setMovies([]))
+    }, []);
+
     return (
         <div>
             <h1>Contenedor de películas</h1>
             <section>
                 <div className="row">
-                    <MovieCard
-                        image="https://es.web.img3.acsta.net/c_215_290/pictures/19/11/12/12/25/0815514.jpg"
-                        title="Sonic la pelicula"
-                        description="loremloremlorem"
-                        director="Desconocido"
-                        theme="Acción"
-                    />
+                    {movies.map(movie => (
+                        <MovieCard
+                            image={movie.image}
+                            title={movie.title}
+                            description={movie.description}
+                            director={movie.director}
+                            theme={movie.theme}
+                            year={movie.year}
+                        />
+                    ))}
                 </div>
             </section>
         </div>
     )
 }
 
+// npm i --save-dev node-sass
