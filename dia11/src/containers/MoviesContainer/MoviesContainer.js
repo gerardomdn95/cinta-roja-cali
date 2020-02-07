@@ -14,21 +14,24 @@ export const MoviesContainer = () => {
 
     return (
         <div>
-            <h1>Contenedor de películas</h1>
-            <section>
-                <div className="row">
-                    {movies.map(movie => (
-                        <MovieCard
-                            image={movie.image}
-                            title={movie.title}
-                            description={movie.description}
-                            director={movie.director}
-                            theme={movie.theme}
-                            year={movie.year}
-                        />
-                    ))}
-                </div>
-            </section>
+            <div className="container">
+                <br/>
+                <h1>Contenedor de películas</h1>
+                <section>
+                    <div className="row">
+                        {movies.map(movie => (
+                            <MovieCard
+                                image={movie.image}
+                                title={movie.title}
+                                description={movie.description}
+                                director={movie.director}
+                                theme={movie.theme}
+                                year={movie.year}
+                            />
+                        ))}
+                    </div>
+                </section>
+            </div>
         </div>
     )
 }

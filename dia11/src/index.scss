@@ -11,7 +11,9 @@
 // Grid
 // @import "~materialize-css/sass/components/_grid";
 
+$material-icons-font-path: '~material-icons/iconfont/';
 @import "~materialize-css/sass/materialize";
+@import '~material-icons/iconfont/material-icons.scss';
 
 body {
   margin: 0;
